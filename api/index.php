@@ -37,6 +37,22 @@ putenv('APP_EVENTS_CACHE=/tmp/storage/bootstrap/cache/events.php');
 define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/../vendor/autoload.php';
+
+// OVERRIDE LARAVEL'S STRICT ERROR HANDLER
+spl_autoload_register(function ($class) {
+    if ($class === 'Illuminate\\Foundation\\Bootstrap\\HandleExceptions') {
+        $file = __DIR__.'/../vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php';
+        if (file_exists($file)) {
+            $code = file_get_contents($file);
+            // Patch the strict error reporting
+            $code = str_replace('error_reporting(-1);', 'error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);', $code);
+            $code = str_replace('<?php', '', $code);
+            eval($code);
+            return true;
+        }
+    }
+}, true, true);
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 // OVERRIDE STORAGE PATH GLOBALLY FOR VERCEL

@@ -74,8 +74,7 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php -r \"\\$f='vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php'; if(file_exists(\\$f)) { file_put_contents(\\$f, str_replace('error_reporting(-1);', 'error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);', file_get_contents(\\$f))); }\""
+            "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
