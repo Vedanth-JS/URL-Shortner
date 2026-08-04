@@ -33,7 +33,7 @@
                 @foreach ($publicUrls as $publicUrl)
                     <tr>
                         <th scope="row">
-                            <a href="/{{$publicUrl->short_url}}" target="_blank">{{$publicUrl->short_url}}</a>
+                            <a href="/{{$publicUrl->short_url}}" target="_blank">{{ request()->getHttpHost() }}/{{$publicUrl->short_url}}</a>
                         </th>
                         <td>
                             {{$publicUrl->long_url }}

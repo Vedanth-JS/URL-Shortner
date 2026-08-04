@@ -29,9 +29,9 @@
                                     <tbody>
                                     @foreach ($urls as $url)
                                         <tr>
-                                            <td>
-                                                <a href="/{{$url->short_url}}">{{$url->short_url}}</a>
-                                            </td>
+                                            <th scope="row">
+                                                <a href="/{{$url->short_url}}">{{ request()->getHttpHost() }}/{{$url->short_url}}</a>
+                                            </th>
                                             <td>
                                                 <a href="{{$url->long_url}}">{{$url->long_url}}</a>
                                             </td>
