@@ -42,6 +42,14 @@ URL Shortener provides advanced privacy-oriented options and full administrative
 
 ---
 
+## 📖 How to Use
+
+1. **Enter the Target Website:** Paste the long URL you want to shorten into the "Create new Short URL" box on the dashboard.
+2. **(Optional) Add a Custom Short URL:** If you want a specific link (e.g. `sddddddddd`), click the "Options" gear icon and enter your custom name.
+3. **Copy and Use the Short Link:** Once processed, a success banner will appear at the top displaying your new shortened link (e.g., `url-shortner-bg7d.vercel.app/sddddddddd`). Share or click this generated link, and it will automatically redirect anyone who clicks it to the target website you entered!
+
+---
+
 ## 🛠️ Installation
 
 You can learn how to install and configure URL Shortener by following our detailed [documentation](https://urlhum.readme.io/docs/getting-started).
