@@ -14,6 +14,14 @@ $app = new Illuminate\Foundation\Application(
 
 /*
 |--------------------------------------------------------------------------
+| Vercel Serverless Storage Path
+|--------------------------------------------------------------------------
+| Vercel's filesystem is read-only, except for /tmp.
+*/
+$app->useStoragePath($_ENV['APP_STORAGE'] ?? $app->basePath('storage'));
+
+/*
+|--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
 |
