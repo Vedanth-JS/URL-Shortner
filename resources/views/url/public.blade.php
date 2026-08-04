@@ -30,7 +30,7 @@
                                     @foreach ($urls as $url)
                                         <tr>
                                             <th scope="row">
-                                                <a href="/{{$url->short_url}}">{{ request()->getHttpHost() }}/{{$url->short_url}}</a>
+                                                <a href="/{{$url->short_url}}">url-shortner-vedanth.vercel.app/{{$url->short_url}}</a>
                                             </th>
                                             <td>
                                                 <a href="{{$url->long_url}}">{{$url->long_url}}</a>
