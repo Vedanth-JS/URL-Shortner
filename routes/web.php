@@ -55,6 +55,10 @@ Route::group(['prefix' => 'url'], function () {
 Route::resource('url', 'UrlController')->except(['edit', 'index'])->middleware(['verifycheck', 'honeypot']);
 
 Route::get('/{url}+', 'AnalyticsController@show')->name('stats');
+Route::get('/run-migrations', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    return \Illuminate\Support\Facades\Artisan::output();
+});
 Route::get('/{url}.svg', 'QRCodeController@svg')->name('qrcode.svg');
 Route::get('/{url}.png', 'QRCodeController@png')->name('qrcode.png');
 Route::get('/{url}', 'ClickUrlController@click')->name('click');
