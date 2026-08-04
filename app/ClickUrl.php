@@ -56,7 +56,7 @@ class ClickUrl extends Model
     public static function realClick($short_url, $ip_address)
     {
         $click = DB::table('clicks')
-            ->whereRaw('BINARY `short_url` = ?', [$short_url])
+            ->where('short_url', $short_url)
             ->where('ip_address', $ip_address)
             ->where('created_at', '>=', Carbon::now()->subDay())
             ->where(function ($query) {
@@ -117,7 +117,7 @@ class ClickUrl extends Model
      */
     public static function deleteUrlsClicks($url)
     {
-        self::whereRaw('BINARY `short_url` = ?', [$url])->delete();
+        self::where('short_url', $url)->delete();
     }
 
     /**

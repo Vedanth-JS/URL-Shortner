@@ -181,7 +181,7 @@ class UrlController extends Controller
             abort(403);
         }
 
-        $url = Url::with('user:id,name,email')->whereRaw('BINARY `short_url` = ?', [$url])->firstOrFail();
+        $url = Url::with('user:id,name,email')->where('short_url', $url)->firstOrFail();
 
         $targets = $this->url->getTargets($url);
 
@@ -202,7 +202,7 @@ class UrlController extends Controller
      */
     public function update($url, ShortUrl $request)
     {
-        $url = Url::whereRaw('BINARY `short_url` = ?', [$url])->firstOrFail();
+        $url = Url::where('short_url', $url)->firstOrFail();
 
         if (! $this->url->OwnerOrAdmin($url->short_url)) {
             return response('Forbidden', 403);
@@ -231,14 +231,14 @@ class UrlController extends Controller
      */
     public function destroy($url)
     {
-        Url::whereRaw('BINARY `short_url` = ?',  [$url])->firstOrFail();
+        Url::where('short_url', $url)->firstOrFail();
 
         if (! $this->url->OwnerOrAdmin($url)) {
             return response('Forbidden', 403);
         }
 
         ClickUrl::deleteUrlsClicks($url);
-        Url::whereRaw('BINARY `short_url` = ?', [$url])->firstOrFail()->deviceTargets()->delete();
+        Url::where('short_url', $url)->firstOrFail()->deviceTargets()->delete();
         Url::destroy($url);
 
         // We add the Short URL to the DeletedUrls Database table.
@@ -257,7 +257,7 @@ class UrlController extends Controller
     public function checkExistingUrl(Request $request)
     {
         if ($this->url->isUrlReserved($request->input) ||
-            Url::whereRaw('BINARY `short_url` = ?', [$request->input])->exists() ||
+            Url::where('short_url', $request->input)->exists() ||
             (! setting('deleted_urls_can_be_recreated') && $this->url->isUrlAlreadyDeleted($request->input)) || $this->url->isShortUrlProtected($request->input)) {
             return response('Custom URL already existing', 409);
         }

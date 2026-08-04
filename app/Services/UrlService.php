@@ -74,7 +74,7 @@ class UrlService
             $hashids = new Hashids(env('APP_KEY'), $hashLength);
             $encoded = $hashids->encode($id);
             $alreadyGenerated = false;
-            if ($this->isUrlReserved($encoded) || Url::whereRaw('BINARY `short_url` = ?', [$encoded])->exists()) {
+            if ($this->isUrlReserved($encoded) || Url::where('short_url', $encoded)->exists()) {
                 $alreadyGenerated = true;
                 $checksQuantity++;
             }
@@ -124,7 +124,7 @@ class UrlService
             return false;
         }
 
-        $urlUser = Url::whereRaw('BINARY `short_url` = ?', [$url])->firstOrFail();
+        $urlUser = Url::where('short_url', $url)->firstOrFail();
 
         return $urlUser->user_id === Auth::user()->id;
     }
@@ -142,7 +142,7 @@ class UrlService
             return false;
         }
 
-        return Url::whereRaw('BINARY `short_url` = ?', [$custom_url])->exists() || $this->isUrlReserved($custom_url);
+        return Url::where('short_url', $custom_url)->exists() || $this->isUrlReserved($custom_url);
     }
 
     /**
@@ -207,7 +207,7 @@ class UrlService
     {
         return \DB::table('deleted_urls')
             ->select('url')
-            ->whereRaw('BINARY `short_url` = ?', [$url])
+            ->where('short_url', $url)
             ->exists();
     }
 

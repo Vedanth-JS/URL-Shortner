@@ -14,7 +14,7 @@ class IncreaseLongUrlLength extends Migration
     public function up()
     {
         Schema::table('urls', function ($table) {
-            DB::statement('ALTER TABLE `urls` DROP INDEX `urls_long_url_unique`;');
+            $table->dropUnique('urls_long_url_unique');
             $table->string('long_url', 2048)->change();
         });
     }
