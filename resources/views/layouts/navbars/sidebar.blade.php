@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ setting('website_image') }}" class="navbar-brand-img" alt="...">
+            <h2 class="text-primary font-weight-bold mb-0"><i class="fa fa-link"></i> {{ setting('website_name') }}</h2>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ route('home') }}">
-                            <img src="{{ setting('website_image') }}">
+                            <h2 class="text-primary font-weight-bold mb-0"><i class="fa fa-link"></i> {{ setting('website_name') }}</h2>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">

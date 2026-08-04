@@ -56,7 +56,7 @@ class SettingsSetCommand extends Command
             'disable_referers' => 1,
             'reservedShortUrls' =>  '""',
             'deleted_urls_can_be_recreated' => 1,
-            'website_name' => 'UrlHum',
+            'website_name' => 'URL Shortener',
             'website_image' => '/images/urlhum.png',
             'website_favicon' => '/images/favicon.ico',
             'privacy_policy' => ' ',

@@ -100,9 +100,9 @@ class UrlController extends Controller
             } else {
                 try {
                     $url = $this->url->shortenUrl($url, null, $data['privateUrl'], $data['hideUrlStats']);
-                } catch (Exception $ex) {
+                } catch (\Exception $ex) {
                     return Redirect::route('multiple')
-                        ->with('errors', 'Error. Please try again.');
+                        ->withErrors(['Error. Please try again: ' . $ex->getMessage()]);
                 }
 
                 $shortened[] = $url->short_url;

@@ -64,7 +64,7 @@ class Url extends Model
 
         $url = new self;
         $url->long_url = $long_url;
-        $url->short_url = $short_url;
+        $url->short_url = $short_url ?? '';
         $url->user_id = $user_id;
         $url->private = $privateUrl;
         $url->hide_stats = $hideUrlStats;

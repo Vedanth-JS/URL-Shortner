@@ -1,7 +1,7 @@
 <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
     <div class="container px-4">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ setting('website_image') }}" style="background:white; border-radius:20px;"/>
+            <h2 class="text-white font-weight-bold mb-0"><i class="fa fa-link"></i> {{ setting('website_name') }}</h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ route('home') }}">
-                            <img src="{{ setting('website_image') }}" style="background:white; border-radius: 20px;">
+                            <h2 class="text-primary font-weight-bold mb-0"><i class="fa fa-link"></i> {{ setting('website_name') }}</h2>
                         </a>
                     </div>
                     <div class="col-6 collapse-close">

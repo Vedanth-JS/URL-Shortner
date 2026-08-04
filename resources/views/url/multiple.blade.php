@@ -12,11 +12,11 @@
             </div>
             <form method="POST" action="/url/multiple">
                 <div class="card-body">
-                    @if (Session::has('errors'))
+                    @if ($errors->any())
                         <div class="alert alert-danger">
                             <div class="alert-heading">{{ __('urlhum.error') }}</div>
                             <ul>
-                                @foreach(Session::get('errors') as $error)
+                                @foreach($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
                             </ul>

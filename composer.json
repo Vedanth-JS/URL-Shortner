@@ -39,6 +39,7 @@
         "nunomaduro/collision": "^5.3.0"
     },
     "config": {
+        "allow-plugins": true,
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true

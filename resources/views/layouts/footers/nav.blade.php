@@ -2,7 +2,7 @@
     <div class="col-xl-6">
         <div class="copyright text-center text-xl-left text-muted">
             &copy; {{ now()->year }} <a href="{{ url('/') }}" class="font-weight-bold ml-1" target="_blank">{{ setting('website_name') }}</a> -
-            {{ __('urlhum.design_by') }} <a href="https://www.creative-tim.com">Creative Tim</a>
+            {{ __('urlhum.design_by') }} Vedanth J S
         </div>
 
     </div>
