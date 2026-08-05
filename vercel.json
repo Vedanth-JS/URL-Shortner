@@ -26,6 +26,7 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
         "CACHE_DRIVER": "array",
-        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views"
+        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+        "MAIL_DRIVER": "log"
     }
 }
