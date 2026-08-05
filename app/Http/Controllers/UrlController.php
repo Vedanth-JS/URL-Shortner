@@ -68,29 +68,41 @@ class UrlController extends Controller
         $data = $multipleUrls->validated();
         $siteUrl = request()->getHttpHost();
 
-        // Split every URL by \n\r
-        $urls = preg_split('/$\R?^/m', $data['urls']);
+        // Split every URL by newline
+        $rawLines = preg_split('/$\R?^/m', $data['urls']);
 
-        foreach ($urls as $key => $url) {
-            $urls[$key] = trim($url);
+        $urls = [];
+        $lineMap = []; // maps processed index => original line number
+        $lineNumber = 0;
+
+        foreach ($rawLines as $line) {
+            $lineNumber++;
+            $trimmed = trim($line);
+            if ($trimmed === '') {
+                continue; // skip blank lines
+            }
+            $urls[] = $trimmed;
+            $lineMap[] = $lineNumber;
         }
 
         $errors = [];
-        $existing = 0;
-        $shortened = [];
 
-        foreach ($urls as $key => $url) {
-            $validator = Validator::make([$url], [$key => 'url']);
+        foreach ($urls as $index => $url) {
+            $originalLine = $lineMap[$index];
+            $validator = Validator::make(['url' => $url], ['url' => 'url']);
             if ($validator->fails()) {
-                $errors[] = 'The URL ' . $url . ' is not valid.';
+                $errors[] = 'Line ' . $originalLine . ': Please enter a valid URL (got: "' . $url . '")';
             }
         }
 
         if (count($errors) > 0) {
             $multipleUrls->flash();
             return Redirect::route('multiple')
-                ->with('errors', $errors);
+                ->withErrors($errors);
         }
+
+        $existing = 0;
+        $shortened = [];
 
         foreach ($urls as $key => $url) {
             if ($shortUrl = $this->url->checkExistingLongUrl($url)) {

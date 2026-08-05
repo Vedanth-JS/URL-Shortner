@@ -106,8 +106,9 @@
 @push('js')
     <script src="/js/app.js"></script>
     <script>
+        // ── Copy generated URLs ──────────────────────────────────────────────
         let textarea = document.getElementById('generated-urls');
-        let button = document.getElementById('copy-generated-urls-btn');
+        let button   = document.getElementById('copy-generated-urls-btn');
 
         if (textarea !== null) {
             let text = textarea.innerHTML;
@@ -115,14 +116,62 @@
             text = text.replace(/ +/g, "\n").trim();
             button.addEventListener('click', function() {
                 navigator.clipboard.writeText(text)
-                    .then(text => {
-                       button.innerHTML = 'Copied!';
-                    })
-                    .catch(err => {
-                        alert("Error copying URLs. Please try again.");
-                });
+                    .then(() => { button.innerHTML = 'Copied!'; })
+                    .catch(() => { alert("Error copying URLs. Please try again."); });
             });
         }
 
+        // ── Real-time per-line URL validation ────────────────────────────────
+        const urlTextarea   = document.querySelector('textarea[name="urls"]');
+        const submitBtn     = document.querySelector('button[type="submit"]');
+        let   validationBox = document.getElementById('live-validation-box');
+
+        if (!validationBox) {
+            validationBox = document.createElement('div');
+            validationBox.id = 'live-validation-box';
+            validationBox.style.cssText = 'margin-top:8px;';
+            urlTextarea.parentNode.insertBefore(validationBox, urlTextarea.nextSibling);
+        }
+
+        function isValidUrl(str) {
+            try {
+                const u = new URL(str);
+                return u.protocol === 'http:' || u.protocol === 'https:';
+            } catch (_) {
+                return false;
+            }
+        }
+
+        function validateLines() {
+            const lines  = urlTextarea.value.split('\n');
+            const errors = [];
+
+            lines.forEach(function(line, idx) {
+                const trimmed = line.trim();
+                if (trimmed === '') return; // skip blank
+                if (!isValidUrl(trimmed)) {
+                    errors.push('Line ' + (idx + 1) + ': Please enter a valid URL');
+                }
+            });
+
+            if (errors.length > 0) {
+                validationBox.innerHTML =
+                    '<div class="alert alert-warning p-2 mt-2" style="font-size:0.85rem;">' +
+                    errors.map(e => '<div>⚠️ ' + e + '</div>').join('') +
+                    '</div>';
+                submitBtn.disabled = true;
+            } else {
+                validationBox.innerHTML = '';
+                submitBtn.disabled = false;
+            }
+        }
+
+        if (urlTextarea) {
+            urlTextarea.addEventListener('input', validateLines);
+            urlTextarea.addEventListener('paste', function() {
+                setTimeout(validateLines, 50);
+            });
+            validateLines(); // run on page load if old value exists
+        }
     </script>
-@endpush
+@endpush
