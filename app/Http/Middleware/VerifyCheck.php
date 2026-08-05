@@ -25,7 +25,7 @@ class VerifyCheck
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && setting('require_user_verify')) {
+        if (false && Auth::check() && setting('require_user_verify')) {
             return app(Verified::class)->handle($request, function ($request) use ($next) {
                 return $next($request);
             });

@@ -18,7 +18,7 @@ Route::get('test', 'UrlController@createMultiple');
 Route::get('privacy-policy', 'PagesController@privacy')->name('privacy');
 Route::get('terms-of-use', 'PagesController@tos')->name('tos');
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'UserController', ['except' => ['show']])->middleware('admin');

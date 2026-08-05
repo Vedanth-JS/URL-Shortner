@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="csrf-token" content="H4ab81oYurhduxV7SjNLFsVKFYDwS1ESuIW1oa8l">
+
+    <title> Dashboard - URL Shortener</title>
+    <!-- Favicon -->
+    <link href="/images/favicon.ico" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="/css/app.css" rel="stylesheet">
+</head>
+<body class="">
+
+<div class="main-content">
+    <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
+    <div class="container px-4">
+        <a class="navbar-brand" href="http://url-shortner-bg7d.vercel.app">
+            <h2 class="text-white font-weight-bold mb-0"><i class="fa fa-link"></i> URL Shortener</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <!-- Collapse header -->
+            <div class="navbar-collapse-header d-md-none">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="http://url-shortner-bg7d.vercel.app">
+                            <h2 class="text-primary font-weight-bold mb-0"><i class="fa fa-link"></i> URL Shortener</h2>
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar items -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="http://url-shortner-bg7d.vercel.app">
+                        <i class="ni ni-planet"></i>
+                        <span class="nav-link-inner--text">Dashboard</span>
+                    </a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="http://url-shortner-bg7d.vercel.app/register">
+                        <i class="ni ni-circle-08"></i>
+                        <span class="nav-link-inner--text">Register</span>
+                    </a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="http://url-shortner-bg7d.vercel.app/login">
+                        <i class="ni ni-key-25"></i>
+                        <span class="nav-link-inner--text">Login</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+    <div class="container-fluid col-lg-8 col-md-10 col-sm-12">
+        <div class="header-body  anonymous ">
+            <!-- Card stats -->
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Short URLs created</h5>
+                                    <span class="h2 font-weight-bold mb-0">1</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Users</h5>
+                                    <span class="h2 font-weight-bold mb-0">0</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Referers</h5>
+                                    <span class="h2 font-weight-bold mb-0">0</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                        <i class="fas fa-link"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    <div class="container-fluid col-lg-8  col-md-10 col-sm-12 mt--7">
+                    <form method="POST" action="/url">
+    <div class="row">
+        <div class="col
+                            anonymous-box-container
+            ">
+
+            <div class="card shadow
+                                anonymous-create-box
+        ">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                                                        
+                            
+                            
+                            <h3 class="mb-0">Create new Short URL</h3>
+                            <div class="input-group ml-2 mt-2">
+                                <input type="hidden" name="_token" value="H4ab81oYurhduxV7SjNLFsVKFYDwS1ESuIW1oa8l">                                <input type="url" class="form-control" id="longUrl" name="url"
+                                       placeholder="https://website.com" required>
+                                <div class="input-group-append">
+                                    <input type="submit" class="btn btn-primary">
+                                </div>
+                                <div id="url_short_fQbGVmkVURRlwkHK_wrap" style="display:none;">
+        <input name="url_short_fQbGVmkVURRlwkHK" type="text" value="" id="url_short_fQbGVmkVURRlwkHK">
+        <input name="url_longer" type="text" value="eyJpdiI6IkpQcVNiVTlKVkZwK3V4TGRBbGVvWVE9PSIsInZhbHVlIjoibDNYRWliamFUR2F3UEdJcnp0WFR2QT09IiwibWFjIjoiMmUwYjdjNzFlZjNkMGRmNTgxZjg4ZGUwMzE0OTE5ODQ4ZWE4NTdjZWM3YTVkYzA2MmY5OTUxN2I5NmRlODQxNCJ9">
+    </div>
+
+                            </div>
+                            <a class="btn btn-sm btn-secondary mt-2" id="options-toggle"><i
+                                        class="ni ni-settings-gear-65"></i>Options</a>
+
+                            <div id="options-panel" class="card mt-3" style="display:none;">
+                                <div class="card-body">
+                                    <label class="text-left" for="customUrl" style="float:left;">Custom Short URL</label>
+                                        <a id="retarget-device" data-toggle="modal" data-target="#targetModal" class="ml-4 btn btn-sm btn-info text-white">
+                                            Retarget
+                                        <i class="ni ni-mobile-button"></i></a>
+                                    <p class="text-right" id="customUrlResult"></p>
+                                    <div class="form-group" id="customUrlcontainer">
+                                        <input type="text" class="form-control" id="customUrl" name="customUrl">
+                                    </div>
+                                    <br>
+                                    <label class="text-left" for="privateUrl" style="float:left;">Hide from Public URLs page</label>
+                                    <div class="form-group text-right" id="privateUrlcontainer">
+                                        <label class="custom-toggle">
+                                            <input type="hidden" name="privateUrl" value="0">
+                                            <input type="checkbox" name="privateUrl" value="1">
+                                            <span class="custom-toggle-slider rounded-circle"></span>
+                                        </label>
+                                    </div>
+                                    <br>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" id="targetModal">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Imposta targetizzazione dispositivo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="text-left" style="float:left;">Windows (PC)</label>
+                                <input type="url" class="form-control" name="windows"
+                                       placeholder="https://website.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left" style="float:left;">Mac OS (PC)</label>
+                                <input type="url" class="form-control" name="macos"
+                                       placeholder="https://website.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left" style="float:left;">Android</label>
+                                <input type="url" class="form-control"  name="android"
+                                       placeholder="https://website.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left" style="float:left;">iOS</label>
+                                <input type="url" class="form-control" name="ios"
+                                       placeholder="https://website.com">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Salva</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>                <div class="row mt-5">
+                            <div class="
+        col-12
+        mb-5 mb-xl-0">
+    <div class="card shadow">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">Latest URLs</h3>
+                </div>
+                <div class="col text-right">
+                    <a href="http://url-shortner-bg7d.vercel.app/url/public" class="btn btn-sm btn-primary">See all</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <!-- Projects table -->
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Short URL</th>
+                    <th scope="col">Long URL</th>
+                    <th scope="col">Clicks</th>
+                                    </tr>
+                </thead>
+                <tbody>
+                                    <tr>
+                        <th scope="row">
+                            
+                        </th>
+                        <td>
+                            https://github.com/settings/tokens
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            <a href="/+" class="mr-2">
+                                <i class="fa fa-chart-bar fa-2x"></i>
+                            </a>
+                                                </td>
+                    </tr>
+                                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            
+                    </div>
+        <div class="container m-auto">
+    <footer class="footer">
+        <div class="row align-items-center justify-content-xl-between">
+    <div class="col-xl-6">
+        <div class="copyright text-center text-xl-left text-muted">
+            &copy; 2026 <a href="http://url-shortner-bg7d.vercel.app" class="font-weight-bold ml-1" target="_blank">URL Shortener</a> -
+            Design by Vedanth J S
+        </div>
+
+    </div>
+    <div class="col-xl-6">
+        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                            <li class="nav-item">
+                    <a href="http://url-shortner-bg7d.vercel.app/url/public" class="nav-link" target="_blank">Latest URLs</a>
+                </li>
+            
+                            <li class="nav-item">
+                    <a href="http://url-shortner-bg7d.vercel.app/privacy-policy" class="nav-link" target="_blank">Privacy Policy</a>
+                </li>
+            
+
+                            <li class="nav-item">
+                    <a href="http://url-shortner-bg7d.vercel.app/terms-of-use" class="nav-link" target="_blank">Terms of Use</a>
+                </li>
+                    </ul>
+    </div>
+</div>    </footer>
+</div>    </div>
+</div>
+
+
+
+
+
+    <script src="/js/app.js"></script>
+ 
+
+
+</body>
+</html>
