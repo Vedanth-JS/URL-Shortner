@@ -1,30 +1,61 @@
 <div align="center">
-  <h1 align="center">✨ URL Shortener ✨</h1>
-  <p align="center">
-    <strong>A modern, privacy-aware, and blazing fast URL Shortener built with PHP and the Laravel Framework.</strong>
-  </p>
+
+  <img src="https://img.shields.io/badge/🔗_URL_Shortener-Live-brightgreen?style=for-the-badge" alt="Live">
+
+  <h1>⚡ URL Shortener</h1>
+
+  <p><strong>A modern, privacy-aware, and blazing fast URL Shortener<br>built with PHP & the Laravel Framework — deployed on Vercel.</strong></p>
+
+  <a href="https://url-shortner-vedanth.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-url--shortner--vedanth.vercel.app-6366f1?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  </a>
+  &nbsp;
+  <a href="https://github.com/Vedanth-JS/URL-Shortner">
+    <img src="https://img.shields.io/badge/GitHub-Vedanth--JS%2FURL--Shortner-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
+  </a>
+
+  <br><br>
+
+  <a href="https://github.com/Vedanth-JS/URL-Shortner/blob/master/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/Vedanth-JS/URL-Shortner.svg?style=flat-square">
+  </a>
+  <a href="https://github.com/Vedanth-JS/URL-Shortner/commits/master">
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/Vedanth-JS/URL-Shortner?style=flat-square">
+  </a>
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-Laravel-red?style=flat-square&logo=laravel">
+  <img alt="Platform" src="https://img.shields.io/badge/Platform-Vercel-black?style=flat-square&logo=vercel">
+
 </div>
 
-<p align="center">
-  <a href="https://travis-ci.org/urlhum/UrlHum"><img src="https://api.travis-ci.org/urlhum/UrlHum.svg" alt="Build Status"></a>
-  <a href="https://github.styleci.io/repos/182127286"><img src="https://github.styleci.io/repos/182127286/shield" alt="StyleCI Status"></a>
-  <a href="https://codecov.io/gh/urlhum/UrlHum"><img src="https://codecov.io/gh/urlhum/UrlHum/branch/master/graph/badge.svg" /></a>
-  <a href="https://github.com/urlhum/UrlHum/blob/master/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/urlhum/urlhum.svg"></a>
-  <a href="https://github.com/urlhum/UrlHum/releases"><img alt="GitHub release" src="https://img.shields.io/github/release-pre/urlhum/urlhum.svg"></a>
-</p>
+---
+
+## 🌐 Live Demo
+
+> **Try it right now — no installation needed!**
+
+<div align="center">
+  <a href="https://url-shortner-vedanth.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/👉_Open_Live_App-url--shortner--vedanth.vercel.app-6366f1?style=for-the-badge" alt="Open App">
+  </a>
+</div>
+
+| Action | Link |
+|--------|------|
+| 🏠 Homepage | [url-shortner-vedanth.vercel.app](https://url-shortner-vedanth.vercel.app) |
+| 📝 Register | [url-shortner-vedanth.vercel.app/register](https://url-shortner-vedanth.vercel.app/register) |
+| 🔑 Login | [url-shortner-vedanth.vercel.app/login](https://url-shortner-vedanth.vercel.app/login) |
+| 🔗 Bulk Shorten | [url-shortner-vedanth.vercel.app/url/multiple](https://url-shortner-vedanth.vercel.app/url/multiple) |
 
 ---
 
 ## 📸 Screenshots
 
-Here is a live look at the application in action!
-
-### Dashboard & Analytics
+### 🖥️ Dashboard & Analytics
 <p align="center">
   <img src="public/images/live-screenshot.png" alt="Dashboard Screenshot" width="100%">
 </p>
 
-### Beautiful Login Screen
+### 🔐 Beautiful Login Screen
 <p align="center">
   <img src="public/images/live-login.png" alt="Login Screenshot" width="100%">
 </p>
@@ -33,36 +64,54 @@ Here is a live look at the application in action!
 
 ## 🚀 Features
 
-URL Shortener provides advanced privacy-oriented options and full administrative control:
-
-- **🔒 Privacy First**: Advanced IP hashing and anonymizing features.
-- **🛡️ Admin Control**: Decide if unauthenticated users can create short URLs, block certain domains, and control user access.
-- **📊 In-Depth Analytics**: Track clicks, real clicks, country visits, and HTTP referers directly from the beautiful admin panel.
-- **⚡ Quick Stats**: To view a URL's analytics instantly, simply add a `+` after any Short URL!
+| Feature | Description |
+|---------|-------------|
+| 🔒 **Privacy First** | Advanced IP hashing and anonymizing — no personal data exposed |
+| 🛡️ **Admin Control** | Block domains, restrict guest access, manage all users |
+| 📊 **In-Depth Analytics** | Track clicks, countries, HTTP referers from the admin panel |
+| ⚡ **Quick Stats** | Add `+` after any short URL to view its stats instantly |
+| 📋 **Bulk Shortening** | Paste multiple URLs (one per line) and shorten them all at once |
+| ✅ **Real-time Validation** | Live per-line URL validation with exact error messages |
+| 🎨 **Beautiful UI** | Clean, responsive design built with modern CSS |
+| ☁️ **Vercel Deployed** | Serverless PHP on Vercel — always fast, always online |
 
 ---
 
 ## 📖 How to Use
 
-1. **Enter the Target Website:** Paste the long URL you want to shorten into the "Create new Short URL" box on the dashboard.
-2. **(Optional) Add a Custom Short URL:** If you want a specific link (e.g. `sddddddddd`), click the "Options" gear icon and enter your custom name.
-3. **Copy and Use the Short Link:** Once processed, a success banner will appear at the top displaying your new shortened link (e.g., `url-shortner-bg7d.vercel.app/sddddddddd`). Share or click this generated link, and it will automatically redirect anyone who clicks it to the target website you entered!
+### Shorten a Single URL
+1. **Go to** [url-shortner-vedanth.vercel.app](https://url-shortner-vedanth.vercel.app)
+2. **Paste** your long URL into the "Create new Short URL" box
+3. *(Optional)* Click the ⚙️ **Options** gear to add a custom short code
+4. **Copy** your new short link and share it!
+
+### Bulk Shorten URLs
+1. Go to **[Bulk Shorten](https://url-shortner-vedanth.vercel.app/url/multiple)**
+2. Paste multiple URLs — **one URL per line**
+3. Any invalid line shows: `⚠️ Line X: Please enter a valid URL`
+4. Hit submit and get all your short links at once
+
+### View Analytics
+- Add a `+` to any short URL to see its stats:  
+  `url-shortner-vedanth.vercel.app/abc123+`
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Tech Stack
 
-You can learn how to install and configure URL Shortener by following our detailed [documentation](https://urlhum.readme.io/docs/getting-started).
-
-*Note: The application is currently under heavy development. Please test thoroughly before deploying to production environments.*
+| Layer | Technology |
+|-------|------------|
+| **Backend** | PHP 8, Laravel 8 |
+| **Frontend** | Bootstrap 4, Vanilla JS |
+| **Database** | PostgreSQL (Supabase) |
+| **Hosting** | Vercel (Serverless) |
+| **Auth** | Laravel Sanctum |
 
 ---
 
 ## 🤝 Contributing
 
-Thank you for considering contributing to the URL Shortener project! We welcome all contributions. Feel free to send a pull request, and our maintainers will take a look at it.
-
-If you have any questions or want to join the community, jump into our official [Telegram Group](http://t.me/urlhum).
+Contributions are welcome! Feel free to open a PR or issue.
 
 ---
 
