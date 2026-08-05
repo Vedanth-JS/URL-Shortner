@@ -25,6 +25,18 @@
 
 <div class="main-content">
     @include('layouts.navbars.navbar')
+
+    @if(session('status'))
+    <div class="container-fluid mt-3">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>✅ {{ session('status') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    @endif
+
     @yield('content')
 </div>
 
